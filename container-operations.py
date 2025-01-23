@@ -19,6 +19,7 @@ class Item:
     def __eq__(self, other):
         return self.name == other.name
 
+
 item1 = Item("john", 23)
 item2 = Item("wok", 31)
 item3 = Item("merry", 10)
@@ -128,7 +129,7 @@ print(sorted_dict)
 
 
 # ========================= remove =========================
-#dict_of_items.pop(23) # KeyError
+# dict_of_items.pop(23) # KeyError
 dict_of_items.pop(2)
 print(dict_of_items)
 
@@ -139,8 +140,65 @@ copy_of_dict = dict_of_items.copy()
 copy_of_dict.clear()
 print(copy_of_dict)
 
+"""
+str
+"""
+
+
+
+string = "This is a string..."
+decimal_string = "1231"
 # ========================= traverse =========================
+for idx, ch in enumerate(string):
+    print(f"type: {type(ch)} ch: {ch}, is lower: {ch.islower()} lower: {ch.lower()}, upper: {ch.upper()}")
+
+print(f"{decimal_string} is decimal: {decimal_string.isdecimal()}")
 # ========================= find =========================
+
+# find ch
+chs = [ch for ch in string if ch.isalpha()]
+print(chs)
+chs = [ch for ch in string if ch.islower()]
+print(chs)
+
+# find substring
+idx_of_sub = string.find("hello world")
+print(idx_of_sub)
+idx_of_sub = string.find("This")
+print(idx_of_sub)
+idx_of_sub = string.find(" ")
+print(idx_of_sub)
+
+upper_string = "".join(map(lambda ch: ch.upper(), string))
+print(upper_string)
 # ========================= sort =========================
+sorted_string = "".join(sorted(string))
+print(sorted_string)
+
 # ========================= insert =========================
+# does not natively support
+def insert_string(original_string, position, insert_string):
+    new_string = list(original_string)
+    new_string.insert(position, insert_string)
+    return ''.join(new_string)
+
+string = "  Hello World  "
+new_string = insert_string(string, 5, ", ")
+print(new_string)
+
 # ========================= remove =========================
+
+# remove substring
+pos = 1
+string = string[:pos] + string[pos + 1:]
+print(string)
+
+# trim
+string = string.rstrip()
+print(string)
+string = string.lstrip()
+print(string)
+string = string.strip()
+print(string)
+
+
