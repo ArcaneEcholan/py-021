@@ -201,4 +201,9 @@ print(string)
 string = string.strip()
 print(string)
 
+# import sys
+# for line in sys.stdin:
+#     print(line)
 
+bbb = input()
+print(bbb)
