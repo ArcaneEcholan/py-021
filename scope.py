@@ -1,9 +1,4 @@
 
-hello = "hello"
-
-if __name__ == "__main__":
-    print("hello")
-
 # ========================= change global var =========================
 num = 1
 print(f"before func: {num}")
@@ -29,7 +24,7 @@ def func():
     the_var = 1
     print(f"before inner: {the_var}")
     def inner():
-        nonlocal the_var   # nonlocal关键字声明
+        nonlocal the_var   # nonlocal关键字声明, support multiple nested structure
         the_var = 100
         print(the_var)
     inner()
